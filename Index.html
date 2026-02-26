@@ -1,1 +1,82 @@
-# Babe
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>For You ❤️</title>
+
+<style>
+body {
+  margin:0;
+  height:100vh;
+  overflow:hidden;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  font-family:'Comic Sans MS', cursive;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+}
+
+.message {
+  font-size:45px;
+  color:white;
+  text-shadow: 0 0 15px #ff4da6;
+}
+
+.button {
+  position:absolute;
+  bottom:60px;
+  padding:12px 25px;
+  font-size:18px;
+  border:none;
+  border-radius:30px;
+  background:#ff4da6;
+  color:white;
+  cursor:pointer;
+}
+
+.heart {
+  position:absolute;
+  color:#ff3366;
+  animation: float 6s linear infinite;
+}
+
+@keyframes float {
+  0% {transform: translateY(100vh) scale(0.5); opacity:1;}
+  100% {transform: translateY(-10vh) scale(1.5); opacity:0;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="message">
+ခုတလော အဆင်မပြေမူတွေတွက်ဆောရီးပါ bae 💕<br>
+မင်းကိုမင်းကိုလည်း ဂရုစိုက်ပါ အချိန်ပေးပါ အရမ်းချစ်တယ် ဆိုတာကိုလည်းမေ့မသွားနဲ့အုံး ❤️
+  ခုတလော မင်းကို စိတ်ညစ်စရာတွေပဲ ပေးမိလို့ တောင်းပန်ပါတယ် bae.....
+  မနေ့ည တညလုံး ကို တာကိုလုပ်ထားတာ😁😁😁 သဘောကျမယ်ထင်ပါတယ်😊😊😊
+  မချော့တက်လို့ ကိုသိတဲ့ code နဲ့ ပဲ ချော့လိုက်မယ်💝💝💝 ❤️
+</div>
+
+<button class="button" onclick="openSong()">Tap to Play 🎵</button>
+
+<script>
+function openSong(){
+  window.open("https://youtu.be/GxldQ9eX2wo", "_blank");
+}
+
+function createHeart() {
+  const heart = document.createElement("div");
+  heart.classList.add("heart");
+  heart.innerHTML = "💖";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = Math.random() * 30 + 15 + "px";
+  document.body.appendChild(heart);
+  setTimeout(() => { heart.remove(); }, 6000);
+}
+
+setInterval(createHeart, 120);
+</script>
+
+</body>
+</html>
